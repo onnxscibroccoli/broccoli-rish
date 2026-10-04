@@ -26,7 +26,7 @@ class TransportResult:
         return self.returncode == 0
 
     @property
-    def combined_output(self) -> bool:
+    def combined_output(self) -> str:
         return self.stdout + self.stderr
 
 
