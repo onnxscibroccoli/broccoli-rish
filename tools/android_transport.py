@@ -10,6 +10,7 @@ from dataclasses import dataclass
 import os
 import subprocess
 import shlex
+from pathlib import Path
 
 from tools.termux_run_command import available as termux_bridge_available
 from tools.termux_run_command import run as termux_bridge_run
@@ -34,8 +35,8 @@ class RishTransport:
     """Invoke the canonical repository-local Rish wrapper."""
 
     def __init__(self, wrapper: str | None = None, timeout: float = 30.0):
-        root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        self.wrapper = wrapper or os.path.join(root, "lib", "rish_run.sh")
+        core = Path(os.environ.get("BROCCOLI_CORE_ROOT", str(Path.home() / "broccoli-core")))
+        self.wrapper = wrapper or str(core / "lib" / "rish_run.sh")
         self.timeout = float(timeout)
 
     def run(self, command: str, *, timeout: float | None = None) -> TransportResult:
