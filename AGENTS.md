@@ -1,6 +1,6 @@
 # broccoli-rish agent operating contract
 
-One repo. One capability. One wrapper. One live probe.
+One capability. One physical wrapper owned by broccoli-core. One live probe.
 
 You are editing the **Android Rish/Shizuku transport**. You are not editing OmniKali desktop, Grasshopper task lifecycle, Helix, MCP, or Broccoli history.
 
@@ -11,11 +11,12 @@ You are editing the **Android Rish/Shizuku transport**. You are not editing Omni
 3. `PROVENANCE.md` before changing extracted files.
 4. The single file you are changing.
 
-Do not clone or ingest `broccoli-core`.
+Do not copy or ingest broccoli-core. Refer to its installed canonical wrapper.
 
 ## Map
 
-- Wrapper: `lib/rish_run.sh`
+- Physical execution owner: `$HOME/broccoli-core/lib/rish_run.sh`
+- Compatibility redirect: `lib/rish_run.sh`
 - Python bridge: `tools/android_transport.py` (`RishTransport`)
 - RDC/background re-entry: `tools/termux_run_command.py`
 - Live probe: `lib/rish_transport_probe.sh` → `tools/rish_transport_probe.py`
@@ -24,7 +25,7 @@ Do not clone or ingest `broccoli-core`.
 ## Invariants (do not “fix” these)
 
 - `RISH_PRESERVE_ENV=0`
-- fail closed: empty command → 2, missing env → 78, missing binary → 79
+- fail closed: empty command → 2, missing core → 78; core preserves missing env → 78, missing binary → 79
 - RC=0 with empty output is not PASS
 - `termux_run_command` is not a second Rish; it only moves the caller into Termux so `rish_run.sh` can run
 - executor stays on the phone

@@ -27,3 +27,14 @@ This is a copy-with-attribution extract. It is not a rewrite.
 ## Status rule
 
 Files here are EXTRACTED. They become PROVEN for **this** repository only after a live probe against this checkout prints `uid=2000(shell)` and a non-empty artifact. Historical broccoli-core PASS is provenance, not a promotion.
+
+## Ownership correction — 2026-10-07
+
+The source table above describes the original 2026-10-04 extraction, not the current
+blob hashes. Physical execution now delegates to the core owner:
+`broccoli-core/lib/rish_run.sh`. The extracted `lib/rish_run.sh` is a redirect,
+`tools/android_transport.py` resolves core by default, and offline negative gates
+verify that missing core cannot trigger the exported raw launcher. Explicit remote
+wrapper customization remains supported. Core's low-level Shizuku driver and its
+captured Android runtime environment are internal dependencies, not alternative
+public entrypoints. No live proof has been invented or reused across commits.
