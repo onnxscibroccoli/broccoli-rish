@@ -11,6 +11,7 @@
 - [tests/test_fail_closed.py](https://github.com/onnxscibroccoli/broccoli-rish/blob/main/tests/test_fail_closed.py)
 
 **Scoped reference workflow run:** [Inspect the historical GitHub Actions result](https://github.com/onnxscibroccoli/broccoli-rish/actions/runs/37240938647). Verify its SHA/branch before attributing it to current source; CI success is not live/production evidence.
+Recorded 2026-11-11: run 37240938647 is the `fail-closed` workflow on a `push` to `main` at `0218a9a39a33ae0b5343c1051c537ffa36544819` (the current `main` head), conclusion success. It covers the offline unittest suite only (11 tests), not a device.
 
 ## First reviewer command (check prerequisites before executing)
 
