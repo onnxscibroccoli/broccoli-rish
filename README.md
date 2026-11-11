@@ -1,5 +1,8 @@
 # broccoli-rish
 
+
+> **Technical reviewers:** [Source-linked engineering evidence and ordered next steps](docs/PORTFOLIO_READINESS.md) · [tracking issue](https://github.com/onnxscibroccoli/broccoli-rish/issues/2). These records do not certify production behavior.
+
 **Capability owner:** Android Rish/Shizuku transport  
 **Status:** EXTRACTED / NOT_PROVEN against this repository  
 **Source archive:** [`broccoli-core`](https://github.com/onnxscibroccoli/broccoli-core) @ `95041af6e0acb75e5c03363e2becf13b959d0e96`
